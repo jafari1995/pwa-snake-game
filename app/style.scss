@@ -1,0 +1,159 @@
+// $body : 'yellow';
+
+// body {
+//     background-color: $body;
+// }
+// div {
+//     color: blue;
+// }
+
+// .snake-grid {
+//     display: grid;
+//     gap: 5px;
+//     background-color: beige;
+//     width: 100%;
+//     height: 90vh;
+// }
+//  .cell {
+//     background-color: red;
+// }
+// .is-body {
+//     background-color: cadetblue;
+
+// }
+// .is-tail {
+//     background-color: cadetblue;
+//     border-radius:  0 0 40% 40%;
+
+// }
+// .is-head {
+//     background-color: cadetblue;
+//     border-radius: 40% 40% 0 0;
+
+// }
+// .right-direction {
+//      transform: rotateZ(90deg);
+// }
+// .left-direction {
+//      transform: rotateZ(-90deg);
+// }
+// .up-direction {
+//      transform: rotateZ(0deg);
+// }
+// .down-direction {
+//     transform:rotateZ(180deg)
+// }
+// .has-food{
+//     background-color: darkgoldenrod;
+// }
+*  {
+    margin: 0;
+    padding: 0;
+}
+.warpper {
+    background-color: rgb(186 196 1);
+    padding: 20px;
+    margin: 0 auto;
+
+}
+.arrow {
+    font-size: 3rem;
+}
+.modal{
+    flex-direction: column;
+    display: flex;
+    visibility: hidden;
+    top: 0;
+    position: fixed;
+    z-index: 3;
+    background-color: #bac401;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    &__title{
+        margin: 2rem;
+        font-weight: 900;
+        color: #0f1510;
+    }
+    &__try-agian {
+        border: 1px solid #f7ff64;
+        padding: 1rem;
+        border-radius: 40%;
+        cursor: pointer;
+        &:hover{
+            background-color: #979c35;
+        } 
+    }
+}
+#snake {
+    display: block;
+    margin: 0 auto;
+    border: 2px solid black;
+}
+
+
+
+
+li {
+    background-color: black;
+}
+.arrows {
+    margin: 0 auto;
+    align-items: center;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 100px 100px;
+    gap: 5px;
+    margin-top: 15px;
+    visibility: hidden;
+    border: 1px solid black;
+    border-radius: 100%;
+    width: 40%;
+  }
+  
+  .right {
+        justify-self: center;
+        &::before{
+            content: '>';
+
+        }
+  }
+  
+  .left {
+    justify-self: center;
+    &::before{
+        content: '<';
+
+    }
+  
+  }
+  
+  .up {
+    transform: rotate(271deg) ;
+    &::before{
+        content: '>';
+    }
+    grid-column: 1/3;
+    justify-self: center;
+
+  }
+  
+  .down {
+    &::before{
+        content: '>';
+    }
+    justify-self: center;
+    transform: rotate(-271deg) ;
+    grid-column: 1/3;
+  }
+
+@media only screen and (max-width: 600px) {
+    .arrows{
+        visibility: visible;
+    }
+}
+
+
+
+
